@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/common/constants/route_constants.dart';
 
+import 'journeys/favorite/favorite_screen.dart';
 import 'journeys/home/home_screen.dart';
 import 'journeys/movie_detail/movie_detail_arguments.dart';
 import 'journeys/movie_detail/movie_detail_screen.dart';
+import 'journeys/watch_video/watch_video_arguments.dart';
+import 'journeys/watch_video/watch_video_screen.dart';
 
 class Routes {
   static Map<String, WidgetBuilder> getRoutes(RouteSettings setting) => {
@@ -13,9 +16,9 @@ class Routes {
     RouteList.movieDetail: (context) => MovieDetailScreen(
       movieDetailArguments: setting.arguments as MovieDetailArguments,
     ),
-    /*RouteList.watchTrailer: (context) => WatchVideoScreen(
+    RouteList.watchTrailer: (context) => WatchVideoScreen(
       watchVideoArguments: setting.arguments as WatchVideoArguments,
     ),
-    RouteList.favorite: (context) => FavoriteScreen(), */
+    RouteList.favorite: (context) => FavoriteScreen(),
   };
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieapp/common/constants/size_constants.dart';
 import 'package:movieapp/common/extensions/size_extensions.dart';
+import 'package:movieapp/domain/entities/movie_entity.dart';
+import 'package:movieapp/presentation/blocs/favorite/favorite_cubit.dart';
 import 'package:movieapp/presentation/themes/theme_color.dart';
 
 import '../../../domain/entities/movie_detail_entity.dart';
@@ -32,7 +34,7 @@ class MovieDetailAppBar extends StatelessWidget {
             size: Sizes.dimen_12.h,
           ),
         ),
-      /*  BlocBuilder<FavoriteCubit, FavoriteState>(
+        BlocBuilder<FavoriteCubit, FavoriteState>(
           builder: (context, state) {
             if (state is IsFavoriteMovie) {
               return GestureDetector(
@@ -61,7 +63,7 @@ class MovieDetailAppBar extends StatelessWidget {
               );
             }
           },
-        ), */
+        ),
       ],
     );
   }

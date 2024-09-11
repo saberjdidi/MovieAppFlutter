@@ -31,7 +31,8 @@ class MovieCardWidget extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(Sizes.dimen_16.w),
           child: CachedNetworkImage(
-            imageUrl: '${ApiConstants.BASE_IMAGE_URL}$posterPath',
+            //imageUrl: '${ApiConstants.BASE_IMAGE_URL}$posterPath',
+            imageUrl: 'https://www.shutterstock.com/image-photo/photo-old-movie-projector-260nw-92369284.jpg',
             fit: BoxFit.cover,
           ),
         ),

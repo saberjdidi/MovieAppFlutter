@@ -4,11 +4,16 @@ import 'package:movieapp/common/constants/size_constants.dart';
 import 'package:movieapp/common/constants/translation_constants.dart';
 import 'package:movieapp/common/extensions/size_extensions.dart';
 import 'package:movieapp/common/extensions/string_extensions.dart';
+import 'package:movieapp/presentation/blocs/favorite/favorite_cubit.dart';
 import 'package:movieapp/presentation/blocs/movie_detail/movie_detail_cubit.dart';
 
 import '../../../di/get_it.dart';
+import '../../blocs/cast/cast_cubit.dart';
+import '../../blocs/videos/videos_cubit.dart';
 import 'big_poster.dart';
+import 'cast_widget.dart';
 import 'movie_detail_arguments.dart';
+import 'videos_widget.dart';
 
 class MovieDetailScreen extends StatefulWidget {
   final MovieDetailArguments movieDetailArguments;
@@ -24,26 +29,26 @@ class MovieDetailScreen extends StatefulWidget {
 
 class _MovieDetailScreenState extends State<MovieDetailScreen> {
   late MovieDetailCubit _movieDetailCubit;
- /* late CastCubit _castCubit;
+  late CastCubit _castCubit;
   late VideosCubit _videosCubit;
-  late FavoriteCubit _favoriteCubit; */
+  late FavoriteCubit _favoriteCubit;
 
   @override
   void initState() {
     super.initState();
     _movieDetailCubit = getItInstance<MovieDetailCubit>();
-  /* _castCubit = _movieDetailCubit.castBloc;
+   _castCubit = _movieDetailCubit.castBloc;
     _videosCubit = _movieDetailCubit.videosCubit;
-    _favoriteCubit = _movieDetailCubit.favoriteCubit; */
+    _favoriteCubit = _movieDetailCubit.favoriteCubit;
     _movieDetailCubit.loadMovieDetail(widget.movieDetailArguments.movieId);
   }
 
   @override
   void dispose() {
     _movieDetailCubit.close();
-  /*  _castCubit.close();
+    _castCubit.close();
     _videosCubit.close();
-    _favoriteCubit.close(); */
+    _favoriteCubit.close();
     super.dispose();
   }
 
@@ -53,9 +58,9 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       body: MultiBlocProvider(
         providers: [
           BlocProvider.value(value: _movieDetailCubit),
-        /*  BlocProvider.value(value: _castCubit),
+          BlocProvider.value(value: _castCubit),
           BlocProvider.value(value: _videosCubit),
-          BlocProvider.value(value: _favoriteCubit), */
+          BlocProvider.value(value: _favoriteCubit),
         ],
         child: BlocBuilder<MovieDetailCubit, MovieDetailState>(
           builder: (context, state) {
@@ -87,8 +92,8 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
-                  /*  CastWidget(),
-                    VideosWidget(videosCubit: _videosCubit), */
+                    CastWidget(),
+                    VideosWidget(videosCubit: _videosCubit),
                   ],
                 ),
               );

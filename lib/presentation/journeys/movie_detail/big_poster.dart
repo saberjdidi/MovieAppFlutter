@@ -34,7 +34,8 @@ class BigPoster extends StatelessWidget {
             ),
           ),
           child: CachedNetworkImage(
-            imageUrl: '${ApiConstants.BASE_IMAGE_URL}${movie.posterPath}',
+            //imageUrl: '${ApiConstants.BASE_IMAGE_URL}${movie.posterPath}',
+            imageUrl: 'https://www.shutterstock.com/image-photo/photo-old-movie-projector-260nw-92369284.jpg',
             width: ScreenUtil.screenWidth,
           ),
         ),

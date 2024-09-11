@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
+//import 'package:dio/dio.dart';
+//import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 import 'package:http/io_client.dart';
@@ -11,6 +13,41 @@ class ApiClient {
 
   ApiClient(this._client);
 
+  ///using Dio
+  /*
+  final Dio _dio;
+
+  ApiClient(this._dio) {
+    _dio.options.baseUrl = ApiConstants.BASE_URL;
+    _dio.options.headers = {'Content-Type': 'application/json'};
+
+    // Bypass SSL certificate validation
+    (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (HttpClient client) {
+      client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+      return client;
+    };
+  }
+
+  Future<dynamic> get(String path, {Map<String, dynamic>? params}) async {
+    try {
+      final response = await _dio.get(
+        path,
+        queryParameters: {'api_key': ApiConstants.API_KEY, ...?params},
+      );
+
+      return response.data;
+    } on DioError catch (e) {
+      if (e.response?.statusCode == 401) {
+        //throw UnauthorizedException();
+        throw Exception(e.response?.statusMessage ?? 'Unauthorized');
+      } else {
+        throw Exception(e.response?.statusMessage ?? 'Unknown error');
+      }
+    }
+  }
+  */
+
+  ///using http
 /*
   late HttpClient _clientHttp;
   late IOClient _ioClient;
@@ -36,6 +73,7 @@ class ApiClient {
       throw Exception(response.reasonPhrase);
     }
   } */
+
 
   dynamic get(String path, {Map<dynamic, dynamic>? params}) async {
     await Future.delayed(Duration(milliseconds: 500));
@@ -102,4 +140,5 @@ class ApiClient {
     return Uri.parse(
         '${ApiConstants.BASE_URL}$path?api_key=${ApiConstants.API_KEY}$paramsString');
   }
+
 }
