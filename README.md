@@ -59,4 +59,6 @@ add packages and add commande to add movie_table.g.dart in cmd> flutter packages
 ## FLutter launch icon => flutter_launcher_icons
 - cmd : flutter pub get
 - cmd : flutter pub run flutter_launcher_icons
+## test:
+cmd> fvm flutter test test/presentation/blocs/movie_tabbed/movie_tabbed_cubit_test  : fvm not exist
 
