@@ -52,3 +52,11 @@ Movie App Project
 4. Retrieve preferred language
 add packages and add commande to add movie_table.g.dart in cmd> flutter packages pub run build_runner build
 
+## https://flare.rive.app/ && https://rive.app/: icon & animation
+
+## Authentication : username:saber / pwd:saber
+
+## FLutter launch icon => flutter_launcher_icons
+- cmd : flutter pub get
+- cmd : flutter pub run flutter_launcher_icons
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movieapp/common/constants/languages.dart';
+import 'package:movieapp/presentation/blocs/login/login_cubit.dart';
 import '../common/constants/route_constants.dart';
 import '../common/screenutil/screenutil.dart';
 import '../di/get_it.dart';
@@ -28,7 +29,7 @@ class _MovieAppState extends State<MovieApp> {
 
   final _navigatorKey = GlobalKey<NavigatorState>();
   late LanguageCubit _languageCubit;
-  //late LoginCubit _loginBloc;
+  late LoginCubit _loginBloc;
   late LoadingCubit _loadingCubit;
   late ThemeCubit _themeCubit;
 
@@ -37,7 +38,7 @@ class _MovieAppState extends State<MovieApp> {
     super.initState();
     _languageCubit = getItInstance<LanguageCubit>();
     _languageCubit.loadPreferredLanguage();
-    //_loginBloc = getItInstance<LoginCubit>();
+    _loginBloc = getItInstance<LoginCubit>();
     _loadingCubit = getItInstance<LoadingCubit>();
     _themeCubit = getItInstance<ThemeCubit>();
     _themeCubit.loadPreferredTheme();
@@ -46,7 +47,7 @@ class _MovieAppState extends State<MovieApp> {
   @override
   void dispose() {
     _languageCubit.close();
-    //_loginBloc.close();
+    _loginBloc.close();
     _loadingCubit.close();
     super.dispose();
   }
@@ -57,7 +58,7 @@ class _MovieAppState extends State<MovieApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<LanguageCubit>.value(value: _languageCubit),
-        //BlocProvider<LoginCubit>.value(value: _loginBloc),
+        BlocProvider<LoginCubit>.value(value: _loginBloc),
         BlocProvider<LoadingCubit>.value(value: _loadingCubit),
         BlocProvider<ThemeCubit>.value(value: _themeCubit),
       ],

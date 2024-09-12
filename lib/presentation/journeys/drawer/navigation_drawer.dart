@@ -7,6 +7,7 @@ import 'package:movieapp/common/constants/translation_constants.dart';
 import 'package:movieapp/common/extensions/size_extensions.dart';
 import 'package:movieapp/common/extensions/string_extensions.dart';
 import 'package:movieapp/presentation/blocs/language/language_cubit.dart';
+import 'package:movieapp/presentation/blocs/login/login_cubit.dart';
 import 'package:movieapp/presentation/blocs/theme/theme_cubit.dart';
 import 'package:movieapp/presentation/widgets/app_dialog.dart';
 import 'package:movieapp/presentation/widgets/logo.dart';
@@ -71,7 +72,7 @@ class NavigationDrawerScreen extends StatelessWidget {
                 _showDialog(context);
               },
             ),
-          /*  BlocListener<LoginCubit, LoginState>(
+            BlocListener<LoginCubit, LoginState>(
               listenWhen: (previous, current) => current is LogoutSuccess,
               listener: (context, state) {
                 Navigator.of(context).pushNamedAndRemoveUntil(
@@ -83,7 +84,7 @@ class NavigationDrawerScreen extends StatelessWidget {
                   BlocProvider.of<LoginCubit>(context).logout();
                 },
               ),
-            ), */
+            ),
             Spacer(),
             BlocBuilder<ThemeCubit, Themes>(builder: (context, theme) {
               return Align(

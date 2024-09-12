@@ -37,6 +37,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
   void initState() {
     super.initState();
     _movieDetailCubit = getItInstance<MovieDetailCubit>();
+    _favoriteCubit = getItInstance<FavoriteCubit>();
    _castCubit = _movieDetailCubit.castBloc;
     _videosCubit = _movieDetailCubit.videosCubit;
     _favoriteCubit = _movieDetailCubit.favoriteCubit;
