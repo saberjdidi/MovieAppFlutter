@@ -59,6 +59,19 @@ add packages and add commande to add movie_table.g.dart in cmd> flutter packages
 ## FLutter launch icon => flutter_launcher_icons
 - cmd : flutter pub get
 - cmd : flutter pub run flutter_launcher_icons
-## test:
+
+## Test: Bloc Test + Test Widget => test unitaire
 cmd> fvm flutter test test/presentation/blocs/movie_tabbed/movie_tabbed_cubit_test  : fvm not exist
+
+## Null Safety in Dart ?
+- Nullable Types : non-nullable : String | nullable : String? 
+- Null-aware Operator
+- Bang Operator
+- The late keyword
+- The required keyword
+
+## fvm (flutter version management) Flutter
+
+## Release App
+1- Create JKS File : keytool -genkey -v -keystore $env:USERPROFILE\upload-keystore.jks `-storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `-alias upload
 

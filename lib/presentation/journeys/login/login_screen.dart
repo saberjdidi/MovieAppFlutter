@@ -8,6 +8,7 @@ import 'login_form.dart';
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //ScreenUtil.init();
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: Center(
