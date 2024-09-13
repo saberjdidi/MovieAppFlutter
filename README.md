@@ -73,5 +73,8 @@ cmd> fvm flutter test test/presentation/blocs/movie_tabbed/movie_tabbed_cubit_te
 ## fvm (flutter version management) Flutter
 
 ## Release App
+https://docs.flutter.dev/deployment/android#build-the-app-for-release
 1- Create JKS File : keytool -genkey -v -keystore $env:USERPROFILE\upload-keystore.jks `-storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `-alias upload
+
+## CI/CD : https://www.youtube.com/watch?v=TWgs4P9ClgE&list=PL342JVRNQxEAcQdnNeN0JmMzfcm6VtLxS&index=24
 
